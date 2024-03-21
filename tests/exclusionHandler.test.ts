@@ -25,13 +25,16 @@ describe('ExclusionHandler', () => {
     });
 
     test('should exclude files listed in .gitignore, .dockerignore, and .gptignore', () => {
-        expect(shouldExclude('node_modules/package.json')).toBeTruthy();
-        expect(shouldExclude('build/main.js')).toBeTruthy();
-        expect(shouldExclude('docker-compose.yml')).toBeTruthy();
+        expect(shouldExclude('error.log')).toBeTruthy();
+        expect(shouldExclude('combined.log')).toBeTruthy();
+        expect(shouldExclude('dist')).toBeTruthy();
+        expect(shouldExclude('node_modules/.package-lock.json')).toBeTruthy();
         expect(shouldExclude('test.txt')).toBeTruthy();
     });
 
     test('should not exclude files not listed in ignore files', () => {
+        expect(shouldExclude('build/main.js')).toBeFalsy();
+        expect(shouldExclude('docker-compose.yml')).toBeFalsy();
         expect(shouldExclude('src/index.ts')).toBeFalsy();
         expect(shouldExclude('README.md')).toBeFalsy();
     });

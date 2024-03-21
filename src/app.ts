@@ -1,8 +1,13 @@
-const logger = require('./logger');
+import logger from './logger';
 
 logger.info('Starting GPTLoader application...');
 
 // Placeholder for future application logic
+import { readFileContents } from './fileReader';
+
+readFileContents().then(files => {
+  console.log('Files read:', files);
+}).catch(console.error);
 
 logger.info('GPTLoader application started.');
 
