@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { shouldExclude } from './exclusionHandler';
-import logger from './logger';
+import { logger } from './logger';
 
 /*
 const isBinaryFile = async (filePath: string): Promise<boolean> => {
@@ -36,7 +36,7 @@ const readDirectoryRecursively = async (dir: string, allFiles: { path: string; c
       } else {
         if (!shouldExclude(fullPath) /*&& !(await isBinaryFile(fullPath))*/) {
           const content = await fs.readFile(fullPath, 'utf8');
-          allFiles.push({ path: fullPath, content });
+          allFiles.push({ path: path.relative(process.cwd(), fullPath), content });
           logger.info(`Included file: ${fullPath}`);
         } else {
           logger.info(`Excluded file: ${fullPath}`);

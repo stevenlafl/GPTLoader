@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import ignore from 'ignore';
-import logger from './logger';
+import { logger } from './logger';
 
 const ignoreFiles = ['.gitignore', '.dockerignore', '.gptignore'];
 
@@ -12,6 +12,7 @@ const readIgnorePatterns = () => {
   ig.add('.git'); // Always ignore .git
   ig.add('.gitignore');
   ig.add('.dockerignore');
+  ig.add('package-lock.json')
   ignoreFiles.forEach(fileName => {
     try {
       const filePath = path.join(process.cwd(), fileName);

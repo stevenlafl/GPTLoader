@@ -5,7 +5,8 @@
   "main": "src/app.ts",
   "scripts": {
     "test": "jest",
-    "start": "ts-node src/app.ts"
+    "start": "LOG_LEVEL=debug ts-node src/app.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

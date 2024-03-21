@@ -2,8 +2,8 @@ import winston from 'winston';
 import path from 'path';
 
 // Create the logger instance
-const logger = winston.createLogger({
-  level: 'info',
+export const logger = winston.createLogger({
+  level: process.env.LOG_LEVEL,
   format: winston.format.combine(
     winston.format.timestamp({
       format: 'YYYY-MM-DD HH:mm:ss',
@@ -23,8 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
   logger.add(
     new winston.transports.Console({
       format: winston.format.simple(),
+      stderrLevels: ['error'],
     }),
   );
 }
-
-export default logger;

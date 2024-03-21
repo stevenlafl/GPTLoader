@@ -1,0 +1,7 @@
+Dockerfile
+.gptignore
+.gitignore
+node_modules
+dist
+*.log
+test.txt
