@@ -3,6 +3,7 @@ dotenv.config();
 
 import { FileReader } from './util/FileReader';
 import { MarkdownGenerator } from './util/MarkdownGenerator';
+import OpenAI from 'openai';
 import { GPTService } from './service/GPTService'; // Assuming you have this
 import { logger } from './util/LoggerFactory';
 import yargs from 'yargs';
@@ -45,6 +46,7 @@ async function main() {
     logger.debug('Parsed command-line arguments... ', argv);
 
     const gpt = new GPTService();
+    let chatHistory: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [];
 
     // Continuous loop
     while (true) {
@@ -70,7 +72,7 @@ async function main() {
       if (response.question === undefined) {
         break;
       }
-      if (response.question.toLowerCase() === "quit") {
+      if (response.question.toLowerCase() === "quit" || response.question.toLowerCase() === "exit" || response.question.toLowerCase() === "q") {
         break;
       }
       if (!response.question) {
@@ -81,8 +83,15 @@ async function main() {
       let gptResponse = await gpt.getChatCompletion([
         {role: "system", content: "You are reviewing files and have a question from the user."},
         {role: "system", content: "Here are the files and their contents: \n\n" + markdown},
+        ...chatHistory,
         {role: "user", content: response.question}
       ]);
+
+      // Update chat history with the new question and GPT's response
+      chatHistory.push({role: "user", content: response.question});
+      if (gptResponse.message && gptResponse.message.content) {
+        chatHistory.push({role: "system", content: gptResponse.message.content});
+      }
 
       console.log(gptResponse.message.content);
     }
