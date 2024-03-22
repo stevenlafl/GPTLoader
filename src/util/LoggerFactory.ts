@@ -30,14 +30,12 @@ class LoggerFactory {
       ],
     });
 
-    if (process.env.NODE_ENV !== 'production') {
-      logger.add(
-        new winston.transports.Console({
-          format: winston.format.simple(),
-          stderrLevels: ['error'],
-        }),
-      );
-    }
+    logger.add(
+      new winston.transports.Console({
+        format: winston.format.simple(),
+        stderrLevels: ['error'],
+      }),
+    );
 
     return logger;
   }

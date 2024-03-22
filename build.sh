@@ -1,1 +1,1 @@
-docker build -t stevenlafl/gptloader .
+docker build -t stevenlafl/gptloader --target production .

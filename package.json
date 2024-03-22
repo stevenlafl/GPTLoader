@@ -5,7 +5,8 @@
   "main": "src/app.ts",
   "scripts": {
     "test": "jest",
-    "start": "ts-node src/app.ts --ignore test2.txt,test3.txt --ignore-files .dockerignore,.gptignore,.gitignore",
+    "start": "ts-node src/app.ts",
+    "startargs": "ts-node src/app.ts --ignore test2.txt,test3.txt --ignore-files .dockerignore,.gptignore,.gitignore",
     "build": "tsc"
   },
   "keywords": [],

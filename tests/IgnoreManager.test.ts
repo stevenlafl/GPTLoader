@@ -37,12 +37,16 @@ describe('IgnoreManager', () => {
         jest.mock('../src/util/LoggerFactory', () => ({
             logger: {
             info: jest.fn(),
+            debug: jest.fn(),
             error: jest.fn(),
             },
         }));
 
         const { IgnoreManager } = await import('../src/util/IgnoreManager');
-        ignoreManager = new IgnoreManager();
+        ignoreManager = new IgnoreManager({
+            ignoreFiles: ['.gitignore', '.dockerignore', '.gptignore'],
+            additionalPatterns: []
+        });
     });
 
     test('should exclude files listed in .gitignore, .dockerignore, and .gptignore', () => {

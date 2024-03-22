@@ -12,7 +12,7 @@ import prompts from 'prompts';
 
 async function main() {
   try {
-    logger.info('Starting GPTLoader application...');
+    logger.debug('Starting GPTLoader application...');
 
     // Parse command line arguments
     const argv = await yargs(hideBin(process.argv))
@@ -87,7 +87,7 @@ async function main() {
       console.log(gptResponse.message.content);
     }
 
-    logger.info('GPTLoader application completed successfully.');
+    logger.debug('GPTLoader application completed successfully.');
   } catch (error) {
     logger.error(`An error occurred: ${error}`);
   }

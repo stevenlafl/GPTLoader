@@ -6,6 +6,7 @@ import Handlebars from 'handlebars';
 jest.mock('../src/util/LoggerFactory', () => ({
   logger: {
     info: jest.fn(),
+    debug: jest.fn(),
     error: jest.fn(),
   },
 }));
@@ -43,7 +44,7 @@ This is \\\`code\\\`
     const markdownGenerator = new MarkdownGenerator();
     markdownGenerator.generateMarkdown(fileData);
 
-    expect(logger.info).toHaveBeenCalledWith('Successfully generated markdown document.');
+    expect(logger.debug).toHaveBeenCalledWith('Successfully generated markdown document.');
   });
 
   test('should throw and log an error if markdown generation fails', () => {

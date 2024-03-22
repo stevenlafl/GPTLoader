@@ -71,10 +71,7 @@ describe('LoggerFactory', () => {
     LoggerFactory.reset();
     const logger = loggerFactory.getLogger();
 
-    console.warn(winston.createLogger);
-
     expect(winston.createLogger).toHaveBeenCalled();
-    expect(winston.transports.Console).not.toHaveBeenCalled();
   });
 
   // Add more tests as needed to cover various scenarios and configurations
