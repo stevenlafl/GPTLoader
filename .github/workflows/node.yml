@@ -61,7 +61,7 @@ jobs:
           file: Dockerfile
           platforms: ${{ env.PLATFORMS }}
           push: true
-          tags: ${{ env.REPO_PREFIX }}:${GITHUB_REF_NAME}
+          tags: ${{ env.REPO_PREFIX }}:latest, ${{ env.REPO_PREFIX }}:${{ github.ref_name }}
       - name: Build
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         uses: docker/build-push-action@v5
