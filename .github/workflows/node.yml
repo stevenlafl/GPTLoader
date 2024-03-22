@@ -3,8 +3,14 @@ name: Node.js CI
 on:
   push:
     branches: [ master ]
+    tags: 
+      - v*
   pull_request:
     branches: [ master ]
+
+env:
+  PLATFORMS: linux/amd64,linux/arm64
+  REPO_PREFIX: stevenlafl/gptloader
 
 jobs:
   build-and-test:
@@ -32,23 +38,36 @@ jobs:
   docker-build-and-push:
     needs: build-and-test
     runs-on: ubuntu-latest
-    # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    
     steps:
-      - uses: actions/checkout@v3 
-      
+      - uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-        
+        uses: docker/setup-buildx-action@v3
+
       - name: Login to DockerHub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-      - name: Build and push Docker image
-        run: |
-          docker build -t ${DOCKER_HUB_REPOSITORY}:latest --target production .
-          docker push ${DOCKER_HUB_REPOSITORY}:latest
-        env:
-          DOCKER_HUB_REPOSITORY: ${{ secrets.DOCKER_HUB_REPOSITORY }}
+      - name: Build and push
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        uses: docker/build-push-action@v5
+        with:
+          context: ./
+          file: Dockerfile
+          platforms: ${{ env.PLATFORMS }}
+          push: true
+          tags: ${{ env.REPO_PREFIX }}:${GITHUB_REF_NAME}
+      - name: Build
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        uses: docker/build-push-action@v5
+        with:
+          context: ./
+          file: Dockerfile
+          platforms: ${{ env.PLATFORMS }}
+          push: false
+          tags: ${{ env.REPO_PREFIX }}:latest
