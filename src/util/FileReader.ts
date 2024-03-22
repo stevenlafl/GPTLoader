@@ -1,4 +1,3 @@
-// src/fileReader.ts
 import fs from 'fs/promises';
 import path from 'path';
 import { IgnoreManager } from './IgnoreManager';
