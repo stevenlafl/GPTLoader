@@ -27,13 +27,13 @@ GPTLoader utilizes Node.js for backend logic, incorporating well-known packages 
 
 #### Docker
 ```bash
-docker run -it --name gptloader --rm -e LOG_LEVEL=info -e OPENAI_API_KEY="your_api_key" -v "$(pwd):/app" stevenlafl/gptloader
+docker run -it --name gptloader --rm -e LOG_LEVEL=info -e OPENAI_API_KEY="your_api_key" -v "$(pwd):/app" stevenlafl/gptloader <dirname>
 ```
 
 You can turn this into a command by altering .bashrc:
 ```bash
 gptloader() {
-  docker run -it --name gptloader --rm -e LOG_LEVEL=info -e OPENAI_API_KEY="your_api_key" -v "$(pwd):/app" stevenlafl/gptloader;
+  docker run -it --name gptloader --rm -e LOG_LEVEL=info -e OPENAI_API_KEY="your_api_key" -v "$(pwd):/app" stevenlafl/gptloader "$@";
 }
 ```
 
