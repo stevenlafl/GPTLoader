@@ -14,7 +14,8 @@ class FileReader {
     });
   }
 
-  private async readDirectoryRecursively(dir: string, allFiles: { path: string; content: string }[] = []): Promise<{ path: string; content: string }[]> {
+  private async readDirectoryRecursively(dir: string, allFiles: { path: string; content: string }[] = [], cumulativeSize: number = 0):
+    Promise<{ path: string; content: string }[]> {
     try {
       const entries = await fs.readdir(dir, { withFileTypes: true });
       await Promise.all(entries.map(async (entry) => {
@@ -28,6 +29,14 @@ class FileReader {
           }
         } else {
           if (!this.ignoreManager.shouldExclude(fullPath)) {
+            const stats = await fs.stat(fullPath); // Get the file stats to access the size
+            cumulativeSize += stats.size; // Add the file size to the cumulative size
+
+            // Check if cumulative size exceeds a certain limit (e.g., 1MB = 1024 * 1024 bytes)
+            if (cumulativeSize > 1024 * 1024) {
+              throw new Error('Total file size exceeds the 1MB limit');
+            }
+
             const content = await fs.readFile(fullPath, 'utf8');
             allFiles.push({ path: path.relative(process.cwd(), fullPath), content });
             logger.debug(`Included file: ${fullPath}`);
@@ -43,9 +52,9 @@ class FileReader {
     return allFiles;
   }
 
-  public async readFileContents(): Promise<{ path: string; content: string }[]> {
+  public async readFileContents(dir: string): Promise<{ path: string; content: string }[]> {
     logger.debug('Scanning directory for files...');
-    return this.readDirectoryRecursively(process.cwd())
+    return this.readDirectoryRecursively(dir)
       .then(files => {
         logger.debug(`Scanning complete. Number of files included: ${files.length}`);
         return files;

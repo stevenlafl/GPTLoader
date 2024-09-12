@@ -1,4 +1,4 @@
-FROM node:latest as builder
+FROM node:latest AS builder
 
 WORKDIR /tmp
 # Install app dependencies
@@ -8,7 +8,7 @@ RUN npm install
 COPY ./ /tmp
 RUN npm run build
 
-FROM node:latest as production
+FROM node:latest AS production
 
 ENV NODE_ENV=production
 ENV LOG_LEVEL=silent
@@ -19,9 +19,10 @@ ENV OPENAI_ORGANIZATION=
 RUN mkdir -p /opt/gptloader
 COPY --from=builder /tmp/dist /opt/gptloader
 COPY package.json package-lock.json /opt/gptloader/
+COPY entrypoint.sh /opt/gptloader/
 RUN npm install --prefix /opt/gptloader
 
 # The user's app will be mounted here
 VOLUME /app
 WORKDIR /app
-CMD ["node", "/opt/gptloader/app.js"]
+ENTRYPOINT ["/opt/gptloader/entrypoint.sh"]
