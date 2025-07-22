@@ -1,3 +1,265 @@
+
+# GPTLoader Output
+
+## File: .env.example
+```
+LOG_LEVEL=debug
+OPENAI_API_KEY=""
+OPENAI_ORGANIZATION=""
+```
+## File: LICENSE
+```
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+```
+## File: build.sh
+```
+docker build -t stevenlafl/gptloader --target production .
+```
+## File: entrypoint.sh
+```
+#!/bin/sh
+node /opt/gptloader/app.js "$@"
+```
+## File: NOTICE
+```
+Copyright 2024 Steven Linn
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+## File: jest.config.js
+```
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
+## File: package.json
+```
+{
+  "name": "gptloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.ts",
+  "scripts": {
+    "test": "jest",
+    "start": "ts-node src/app.ts",
+    "startargs": "ts-node src/app.ts --ignore test2.txt,test3.txt --ignore-files .dockerignore,.gptignore,.gitignore",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "handlebars": "^4.7.8",
+    "ignore": "^5.3.2",
+    "openai": "^4.61.0",
+    "prompts": "^2.4.2",
+    "winston": "^3.14.2",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.13",
+    "@types/node": "^22.5.5",
+    "@types/prompts": "^2.4.9",
+    "@types/yargs": "^17.0.33",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}
+
+```
+## File: pnpm-lock.yaml
+```
 lockfileVersion: '9.0'
 
 settings:
@@ -3319,3 +3581,1063 @@ snapshots:
   yn@3.1.1: {}
 
   yocto-queue@0.1.0: {}
+
+```
+## File: test2.txt
+```
+
+```
+## File: tsconfig.json
+```
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+
+    /* Projects */
+    // "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
+    // "composite": true,                                /* Enable constraints that allow a TypeScript project to be used with project references. */
+    // "tsBuildInfoFile": "./.tsbuildinfo",              /* Specify the path to .tsbuildinfo incremental compilation file. */
+    // "disableSourceOfProjectReferenceRedirect": true,  /* Disable preferring source files instead of declaration files when referencing composite projects. */
+    // "disableSolutionSearching": true,                 /* Opt a project out of multi-project reference checking when editing. */
+    // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
+
+    /* Language and Environment */
+    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    // "jsx": "preserve",                                /* Specify what JSX code is generated. */
+    // "experimentalDecorators": true,                   /* Enable experimental support for legacy experimental decorators. */
+    // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
+    // "jsxFactory": "",                                 /* Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h'. */
+    // "jsxFragmentFactory": "",                         /* Specify the JSX Fragment reference used for fragments when targeting React JSX emit e.g. 'React.Fragment' or 'Fragment'. */
+    // "jsxImportSource": "",                            /* Specify module specifier used to import the JSX factory functions when using 'jsx: react-jsx*'. */
+    // "reactNamespace": "",                             /* Specify the object invoked for 'createElement'. This only applies when targeting 'react' JSX emit. */
+    // "noLib": true,                                    /* Disable including any library files, including the default lib.d.ts. */
+    // "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */
+    // "moduleDetection": "auto",                        /* Control what method is used to detect module-format JS files. */
+
+    /* Modules */
+    "module": "commonjs",                                /* Specify what module code is generated. */
+    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
+    // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
+    // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
+    // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
+    // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
+    // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
+    // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
+    // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
+    // "moduleSuffixes": [],                             /* List of file name suffixes to search when resolving a module. */
+    // "allowImportingTsExtensions": true,               /* Allow imports to include TypeScript file extensions. Requires '--moduleResolution bundler' and either '--noEmit' or '--emitDeclarationOnly' to be set. */
+    // "resolvePackageJsonExports": true,                /* Use the package.json 'exports' field when resolving package imports. */
+    // "resolvePackageJsonImports": true,                /* Use the package.json 'imports' field when resolving imports. */
+    // "customConditions": [],                           /* Conditions to set in addition to the resolver-specific defaults when resolving imports. */
+    // "resolveJsonModule": true,                        /* Enable importing .json files. */
+    // "allowArbitraryExtensions": true,                 /* Enable importing files with any extension, provided a declaration file is present. */
+    // "noResolve": true,                                /* Disallow 'import's, 'require's or '<reference>'s from expanding the number of files TypeScript should add to a project. */
+
+    /* JavaScript Support */
+    // "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+    // "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
+    // "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from 'node_modules'. Only applicable with 'allowJs'. */
+
+    /* Emit */
+    // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
+    // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
+    // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
+    // "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
+    // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
+    // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
+    "outDir": "./dist",                                   /* Specify an output folder for all emitted files. */
+    // "removeComments": true,                           /* Disable emitting comments. */
+    // "noEmit": true,                                   /* Disable emitting files from a compilation. */
+    // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
+    // "importsNotUsedAsValues": "remove",               /* Specify emit/checking behavior for imports that are only used for types. */
+    // "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */
+    // "sourceRoot": "",                                 /* Specify the root path for debuggers to find the reference source code. */
+    // "mapRoot": "",                                    /* Specify the location where debugger should locate map files instead of generated locations. */
+    // "inlineSources": true,                            /* Include source code in the sourcemaps inside the emitted JavaScript. */
+    // "emitBOM": true,                                  /* Emit a UTF-8 Byte Order Mark (BOM) in the beginning of output files. */
+    // "newLine": "crlf",                                /* Set the newline character for emitting files. */
+    // "stripInternal": true,                            /* Disable emitting declarations that have '@internal' in their JSDoc comments. */
+    // "noEmitHelpers": true,                            /* Disable generating custom helper functions like '__extends' in compiled output. */
+    // "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
+    // "preserveConstEnums": true,                       /* Disable erasing 'const enum' declarations in generated code. */
+    // "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */
+    // "preserveValueImports": true,                     /* Preserve unused imported values in the JavaScript output that would otherwise be removed. */
+
+    /* Interop Constraints */
+    // "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
+    // "verbatimModuleSyntax": true,                     /* Do not transform or elide any imports or exports not marked as type-only, ensuring they are written in the output file's format based on the 'module' setting. */
+    // "allowSyntheticDefaultImports": true,             /* Allow 'import x from y' when a module doesn't have a default export. */
+    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    // "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
+    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+
+    /* Type Checking */
+    "strict": true,                                      /* Enable all strict type-checking options. */
+    // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+    // "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
+    // "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
+    // "strictBindCallApply": true,                      /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
+    // "strictPropertyInitialization": true,             /* Check for class properties that are declared but not set in the constructor. */
+    // "noImplicitThis": true,                           /* Enable error reporting when 'this' is given the type 'any'. */
+    // "useUnknownInCatchVariables": true,               /* Default catch clause variables as 'unknown' instead of 'any'. */
+    // "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */
+    // "noUnusedLocals": true,                           /* Enable error reporting when local variables aren't read. */
+    // "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read. */
+    // "exactOptionalPropertyTypes": true,               /* Interpret optional property types as written, rather than adding 'undefined'. */
+    // "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
+    // "noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */
+    // "noUncheckedIndexedAccess": true,                 /* Add 'undefined' to a type when accessed using an index. */
+    // "noImplicitOverride": true,                       /* Ensure overriding members in derived classes are marked with an override modifier. */
+    // "noPropertyAccessFromIndexSignature": true,       /* Enforces using indexed accessors for keys declared using an indexed type. */
+    // "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
+    // "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
+
+    /* Completeness */
+    // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
+    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}
+
+```
+## File: src/app.ts
+```
+import dotenv from 'dotenv';
+dotenv.config();
+
+import { FileReader } from './util/FileReader';
+import { MarkdownGenerator } from './util/MarkdownGenerator';
+import OpenAI from 'openai';
+import { GPTService } from './service/GPTService'; // Assuming you have this
+import { logger } from './util/LoggerFactory';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+import fs from 'fs';
+import prompts from 'prompts';
+import path from 'path';
+import { dir } from 'console';
+import EventEmitter from 'events';
+import { Stream } from 'openai/streaming';
+
+async function main() {
+
+  // Create a flag to indicate whether a GPT request is active
+  let isActiveGptRequest = false;
+  
+  // Create an event emitter to handle cancel events
+  const cancelEmitter = new EventEmitter();
+
+  process.on('SIGINT', () => {
+    if (isActiveGptRequest) {
+      // Emit a cancel event that can be handled by your GPT service
+      cancelEmitter.emit('cancel');
+    } else {
+      // If there is no active GPT request, exit the program
+      process.exit(0);
+    }
+  });
+
+  try {
+    logger.debug('Starting GPTLoader application...');
+
+    // Parse command line arguments
+    const argv = await yargs(hideBin(process.argv))
+      .usage(\`Usage: $0 <dirname> [options]\`)
+      .command('$0 <dirname>', 'Load the specified directory into the app', (yargs) => {
+        yargs.positional('dirname', {
+          describe: 'Directory to load',
+          type: 'string'
+        })
+      })
+      .middleware((argv) => {
+        if (argv['ignore-files']) {
+          argv['ignore-files'] = (argv['ignore-files'] as string[])
+            .flatMap((item) => item.split(','))
+            .filter(Boolean);
+        }
+        if (argv.ignore) {
+          argv.ignore = (argv.ignore as string[])
+            .flatMap((item) => item.split(','))
+            .filter(Boolean);
+        }
+      })
+      .option('ignore', {
+        alias: 'i',
+        describe: 'Additional ignore patterns',
+        type: 'array',
+        default: []
+      })
+      .option('ignore-files', {
+        alias: 'if',
+        describe: 'Ignore files to load patterns from',
+        type: 'array',
+        default: ['.gitignore', '.dockerignore', '.gptignore']
+      })
+      .option('output-prompt', {
+        alias: 'op',
+        describe: 'Prompt to use for output',
+        type: 'string',
+        default: 'prompt.md'
+      })
+      .help('help')
+      .wrap(null)
+      .parse();
+
+    logger.debug('Parsed command-line arguments... ', argv);
+
+    const directoryToLoad = typeof argv.dirname === 'string' ? path.resolve(process.cwd(), argv.dirname) : process.cwd();
+
+    const gpt = new GPTService(process.env.DEBUG === 'true');
+    let chatHistory: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [];
+
+    try {
+      const fileReader = new FileReader(argv);
+      const files = await fileReader.readFileContents(directoryToLoad);
+      logger.info(\`Files read: \n  ${files.map(f => f.path).join("\n  ")}\`);
+    } catch (error: any) {
+      if (error.message?.includes('Total file size exceeds the 1MB limit')) {
+        console.error('The total file size of the files is too large. Consider adding some files to .gptignore to reduce the size.');
+        process.exit(1); // Exit the program if the file size is too large
+      }
+      throw error; // If it is a different error, rethrow it
+    }
+    
+    // Instantiate MarkdownGenerator
+    const markdownGenerator = new MarkdownGenerator();
+
+    // Continuous loop
+    while (true) {
+
+      // Prompt the user for a question
+      const response = await prompts({
+        type: 'text',
+        name: 'question',
+        message: 'What do you want to ask? (Type "quit" to exit)'
+      });
+
+      if (response.question === undefined) {
+        break;
+      }
+      if (response.question.toLowerCase() === "quit" || response.question.toLowerCase() === "exit" || response.question.toLowerCase() === "q") {
+        break;
+      }
+      if (!response.question) {
+        continue;
+      }
+      
+      // Instantiate FileReader
+      const fileReader = new FileReader(argv);
+
+      // Step 1: Invoke the FileReader after prompting for the question
+      const files = await fileReader.readFileContents(directoryToLoad);
+      logger.info(\`Files read: \n  ${files.map(f => f.path).join("\n  ")}\`);
+
+      // Step 2: Pass the list of files to the MarkdownGenerator
+      const markdown = markdownGenerator.generateMarkdown(files);
+      logger.debug(\`Markdown document generated.\`);
+
+      // if output prompt is specified, write the prompt to the file
+      if (argv['output-prompt']) {
+        fs.writeFileSync(argv['output-prompt'], markdown);
+        return;
+      }
+
+      // Set flag to indicate active GPT request
+      isActiveGptRequest = true;
+
+      let prompt: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
+        {role: "system", content: "You are reviewing files and have a question from the user."},
+        {role: "system", content: "Here are the files and their contents: \n\n" + markdown},
+        ...chatHistory,
+        {role: "user", content: response.question}
+      ];
+      
+      // Process the question with GPT
+      let stream = await gpt.getChatCompletionStream(prompt)
+
+      let gptResponse = await new Promise<OpenAI.Chat.Completions.ChatCompletion.Choice | null>(async (resolve, reject) => {
+        // Listen for a cancel event
+        let cancelled = false;
+        cancelEmitter.once('cancel', () => {
+          // Cancel GPT response/request here
+          // E.g., resolve with a cancellation message or reject
+          cancelled = true;
+          resolve(null);
+        });
+
+        let fullMessage = '';
+        let lastChunk: OpenAI.Chat.Completions.ChatCompletionChunk | null = null;
+        for await (const chunk of stream) {
+
+          if (cancelled) {
+            break;
+          }
+
+          lastChunk = chunk;
+          fullMessage += chunk.choices[0]?.delta?.content || '';
+          process.stdout.write(chunk.choices[0]?.delta?.content || '');
+        }
+
+        if (lastChunk !== null) {
+          let lastChoice: OpenAI.Chat.Completions.ChatCompletion.Choice = {
+            index: 0,
+            finish_reason: 'stop',
+            message: {
+              refusal: null,
+              role: "assistant",
+              content: fullMessage
+            },
+            logprobs: null
+          }
+
+          resolve(lastChoice)
+        }
+
+        resolve(null)
+      });
+
+      // Reset flag after response is received
+      isActiveGptRequest = false;
+
+      if (gptResponse === null) {
+        continue;
+      }
+
+      // Update chat history with the new question and GPT's response
+      chatHistory.push({role: "user", content: response.question});
+      if (gptResponse.message && gptResponse.message.content) {
+        chatHistory.push({role: "system", content: gptResponse.message.content});
+      }
+
+      console.log(gptResponse.message.content);
+    }
+
+    logger.debug('GPTLoader application completed successfully.');
+  } catch (error) {
+    // Reset flag in case of error as well
+    isActiveGptRequest = false;
+    logger.error(\`An error occurred: ${error}\`);
+  }
+}
+
+main().catch(error => logger.error(\`Unhandled error: ${error.message}\n${error.stack}\`));
+```
+## File: tests/GPTService.test.ts
+```
+import { GPTService } from '../src/service/GPTService';
+
+// Mock the OpenAI library
+jest.mock('openai', () => {
+  return jest.fn().mockImplementation(() => {
+    return {
+      models: {
+        list: jest.fn().mockResolvedValue({
+          data: [
+            { id: 'gpt-3.5-turbo' },
+            { id: 'gpt-4' },
+            // Add more models as needed
+          ],
+        }),
+      },
+      chat: {
+        completions: {
+          create: jest.fn().mockImplementation(async () => {
+            return {
+              choices: [{
+                message: { role: 'assistant', content: 'Mocked Response' },
+                finish_reason: 'stop',
+                index: 0,
+                logprobs: null,
+              }]
+            };
+          })
+        }
+      }
+    };
+  });
+});
+
+describe('GPTService', () => {
+  process.env.OPENAI_ORGANIZATION = 'test';
+  process.env.OPENAI_API_KEY = 'test';
+  let gptService: GPTService;
+
+  beforeAll(async () => {
+    gptService = new GPTService();
+  });
+
+  test('getModels should return a list of model IDs', async () => {
+    const models = await gptService.getModels();
+    expect(models).toEqual(['gpt-3.5-turbo', 'gpt-4']);
+  });
+
+  test('getChatCompletion should return a mocked chat completion', async () => {
+    const completion = await gptService.getChatCompletion([
+      { role: 'user', content: 'Hello, world!'}
+    ]);
+
+    expect(completion).toEqual({
+      message: { role: 'assistant', content: 'Mocked Response' },
+      finish_reason: 'stop',
+      index: 0,
+      logprobs: null,
+    });
+  });
+
+  afterAll(() => {
+    jest.restoreAllMocks();
+  });
+});
+```
+## File: tests/LoggerFactory.test.ts
+```
+import winston from 'winston';
+import { LoggerFactory } from '../src/util/LoggerFactory';
+
+// Mock winston module
+jest.mock('winston', () => {
+  const mFormat = {
+    combine: jest.fn(),
+    timestamp: jest.fn(),
+    errors: jest.fn(),
+    splat: jest.fn(),
+    json: jest.fn(),
+    simple: jest.fn(),
+  };
+  return {
+    format: mFormat,
+    createLogger: jest.fn().mockReturnValue({
+      add: jest.fn(),
+    }),
+    transports: {
+      File: jest.fn(),
+      Console: jest.fn(),
+    },
+  };
+});
+
+describe('LoggerFactory', () => {
+  const originalEnv = process.env;
+
+  beforeEach(() => {
+    jest.clearAllMocks(); // Most important - it clears the cache
+    process.env = { ...originalEnv }; // Make a copy
+  });
+
+  afterAll(() => {
+    process.env = originalEnv; // Restore original env
+  });
+
+  test('should create a logger with file transports in non-production environment', async () => {
+    process.env.NODE_ENV = 'development';
+    process.env.LOG_LEVEL = 'debug';
+
+    const loggerFactory = new LoggerFactory();
+    LoggerFactory.reset();
+    const logger = loggerFactory.getLogger();
+
+    expect(winston.createLogger).toHaveBeenCalledWith(expect.objectContaining({
+      level: 'debug',
+      transports: expect.arrayContaining([
+        expect.any(Object),
+        expect.any(Object),
+      ]),
+    }));
+
+    expect(winston.transports.File).toHaveBeenCalledWith(expect.objectContaining({
+      filename: expect.stringContaining('error.log'),
+      level: 'error',
+    }));
+
+    expect(winston.transports.File).toHaveBeenCalledWith(expect.objectContaining({
+      filename: expect.stringContaining('combined.log'),
+    }));
+
+    expect(winston.transports.Console).toHaveBeenCalled();
+  });
+
+  test('should create a logger without console transport in production environment', async () => {
+    process.env.NODE_ENV = 'production';
+    process.env.LOG_LEVEL = 'silent';
+
+    const loggerFactory = new LoggerFactory();
+    LoggerFactory.reset();
+    const logger = loggerFactory.getLogger();
+
+    expect(winston.createLogger).toHaveBeenCalled();
+  });
+
+  // Add more tests as needed to cover various scenarios and configurations
+});
+```
+## File: tests/IgnoreManager.test.ts
+```
+import { IgnoreManager } from '../src/util/IgnoreManager';
+import * as path from 'path';
+
+describe('IgnoreManager', () => {
+    let ignoreManager: IgnoreManager;
+    
+    beforeAll(async () => {
+        // Mock the filesystem to simulate .gitignore, .dockerignore, and .gptignore files
+        jest.mock('fs', () => ({
+            existsSync: jest.fn().mockImplementation((filePath: string) => {
+                return ['.gitignore', '.dockerignore', '.gptignore'].includes(path.basename(filePath));
+            }),
+            mkdirSync: jest.fn().mockImplementation((filePath: string) => {
+                return true;
+            }),
+            stat: jest.fn().mockImplementation((filePath: string) => {
+                return { isDirectory: () => false };
+            }),
+            readdirSync: jest.fn().mockImplementation((dirPath: string) => {
+                return [];
+            }),
+            readFileSync: jest.fn().mockImplementation((filePath: string) => {
+                switch (path.basename(filePath)) {
+                    case '.gitignore':
+                        return 'node_modules\n*.log\ndist\n.env';
+                    case '.dockerignore':
+                        return 'Dockerfile\n.env\n.gitignore\nnode_modules\ndist\n*.log';
+                    case '.gptignore':
+                        return '*.md\ntest.txt';
+                    default:
+                        return '';
+                }
+            })
+        }));
+        
+        // Mock the logger to avoid actual logging during tests
+        jest.mock('../src/util/LoggerFactory', () => ({
+            logger: {
+            info: jest.fn(),
+            debug: jest.fn(),
+            error: jest.fn(),
+            },
+        }));
+
+        const { IgnoreManager } = await import('../src/util/IgnoreManager');
+        ignoreManager = new IgnoreManager({
+            ignoreFiles: ['.gitignore', '.dockerignore', '.gptignore'],
+            additionalPatterns: []
+        });
+    });
+
+    test('should exclude files listed in .gitignore, .dockerignore, and .gptignore', () => {
+        expect(ignoreManager.shouldExclude('error.log')).toBeTruthy();
+        expect(ignoreManager.shouldExclude('combined.log')).toBeTruthy();
+        expect(ignoreManager.shouldExclude('dist')).toBeTruthy();
+        expect(ignoreManager.shouldExclude('node_modules/.package-lock.json')).toBeTruthy();
+        expect(ignoreManager.shouldExclude('test.txt')).toBeTruthy();
+        expect(ignoreManager.shouldExclude('README.md')).toBeTruthy();
+    });
+
+    test('should not exclude files not listed in ignore files', () => {
+        expect(ignoreManager.shouldExclude('build/main.js')).toBeFalsy();
+        expect(ignoreManager.shouldExclude('docker-compose.yml')).toBeFalsy();
+        expect(ignoreManager.shouldExclude('src/index.ts')).toBeFalsy();
+    });
+
+    afterAll(() => {
+        jest.restoreAllMocks();
+    });
+});
+```
+## File: tests/MarkdownGenerator.test.ts
+```
+import { MarkdownGenerator } from '../src/util/MarkdownGenerator';
+import { logger } from '../src/util/LoggerFactory';
+import Handlebars from 'handlebars';
+
+// Mock the logger to avoid actual logging during tests
+jest.mock('../src/util/LoggerFactory', () => ({
+  logger: {
+    info: jest.fn(),
+    debug: jest.fn(),
+    error: jest.fn(),
+  },
+}));
+
+describe('MarkdownGenerator', () => {
+
+  beforeEach(() => {
+    // Reset and re-instantiate MarkdownGenerator before each test
+    jest.clearAllMocks();
+  });
+
+  test('should correctly escape backticks in content', () => {
+    const fileData = [
+      { path: 'example.txt', content: 'This is \`code\`' },
+    ];
+    const expectedOutput = \`
+# GPTLoader Output
+
+## File: example.txt
+\\`\\`\\`
+This is \\\\`code\\\\`
+\\`\\`\\`
+
+    \`.trim();
+
+    const markdownGenerator = new MarkdownGenerator();
+    const markdownOutput = markdownGenerator.generateMarkdown(fileData).trim();
+
+    expect(markdownOutput).toBe(expectedOutput);
+  });
+
+  test('should log success message on successful markdown generation', () => {
+    const fileData = [{ path: 'success.txt', content: 'Success content' }];
+    
+    const markdownGenerator = new MarkdownGenerator();
+    markdownGenerator.generateMarkdown(fileData);
+
+    expect(logger.debug).toHaveBeenCalledWith('Successfully generated markdown document.');
+  });
+
+  test('should throw and log an error if markdown generation fails', () => {
+    // Simulate an error by mocking compile to throw
+    jest.spyOn(Handlebars, 'compile').mockImplementationOnce(() => {
+      throw new Error('Compilation failed');
+    });
+
+    try {
+      const markdownGenerator = new MarkdownGenerator();
+      const fileData = [{ path: 'fail.txt', content: 'Fail content' }];
+
+      expect(() => markdownGenerator.generateMarkdown(fileData)).toThrow('Compilation failed');
+      expect(logger.error).toHaveBeenCalledWith(expect.stringContaining('Error generating markdown document: Error: Compilation failed'));
+    }
+    catch (error) {
+      // Ensure the error is thrown and logged
+      expect(error).toBeInstanceOf(Error);
+    }
+  });
+
+  // Add more tests as needed to cover various scenarios and edge cases
+});
+```
+## File: .github/workflows/node.yml
+```
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+    tags: 
+      - v*
+  pull_request:
+    branches: [ master ]
+
+env:
+  PLATFORMS: linux/amd64,linux/arm64
+  REPO_PREFIX: stevenlafl/gptloader
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm ci
+    # - name: Run linter
+    #   run: npm run lint
+    - name: Build
+      run: npm run build
+    - name: Run tests
+      run: npm test
+
+  docker-build-and-push:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Build and push
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        uses: docker/build-push-action@v5
+        with:
+          context: ./
+          file: Dockerfile
+          platforms: ${{ env.PLATFORMS }}
+          push: true
+          tags: ${{ env.REPO_PREFIX }}:latest, ${{ env.REPO_PREFIX }}:${{ github.ref_name }}
+      - name: Build
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        uses: docker/build-push-action@v5
+        with:
+          context: ./
+          file: Dockerfile
+          platforms: ${{ env.PLATFORMS }}
+          push: false
+          tags: ${{ env.REPO_PREFIX }}:latest
+```
+## File: src/service/GPTService.ts
+```
+import OpenAI from 'openai';
+import { logger } from '../util/LoggerFactory';
+import { ChatCompletionChunk } from 'openai/resources/chat/completions';
+import { Stream } from 'openai/streaming'
+
+export class GPTService {
+
+  private DEBUG:boolean;
+  private openai;
+
+  constructor(DEBUG:boolean = false) {
+    this.DEBUG = DEBUG;
+
+    if (this.DEBUG) {
+      this.openai = new OpenAI({
+          organization: 'TEST',
+          apiKey: 'TEST',
+      });
+    }
+    else {
+      this.openai = new OpenAI({
+          organization: process.env.OPENAI_ORGANIZATION,
+          apiKey: process.env.OPENAI_API_KEY,
+      });
+    }
+  }
+
+  async getModels(): Promise<string[]> {
+    if (this.DEBUG) {
+      return ['gpt-3.5-turbo', 'gpt-4'];
+    }
+
+    const response = await this.openai.models.list();
+    const models = response.data;
+    return models.map((model) => model.id);
+  }
+
+  async getChatCompletion(messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[]): Promise<OpenAI.Chat.Completions.ChatCompletion.Choice> {
+    if (this.DEBUG) {
+      return {
+        "message":{"refusal": null,"role":"assistant","content":"Mocked Response"},"finish_reason":"stop","index":0,"logprobs": null};
+    }
+
+    logger.debug(\`Processing chat completion...\`);
+    const response = await this.openai.chat.completions.create({
+      model: 'chatgpt-4o-latest',
+      messages,
+    });
+    logger.debug(\`Chat completion is finished...\`);
+
+    return response.choices[0];
+  }
+
+  async getChatCompletionStream(messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[]): Promise<Stream<ChatCompletionChunk>> {
+    logger.debug(\`Processing chat completion...\`);
+    const stream = await this.openai.chat.completions.create({
+      model: 'chatgpt-4o-latest',
+      messages,
+      stream: true,
+    });
+    logger.debug(\`Stream received...\`);
+    return stream;
+  }
+}
+```
+## File: src/util/FileReader.ts
+```
+import fs from 'fs/promises';
+import path from 'path';
+import { IgnoreManager } from './IgnoreManager';
+import { logger } from './LoggerFactory';
+
+class FileReader {
+
+  ignoreManager: IgnoreManager;
+  
+  constructor(argv: any) {
+    this.ignoreManager = new IgnoreManager({
+      ignoreFiles: argv['ignore-files'],
+      additionalPatterns: argv.ignore
+    });
+  }
+
+  private async readDirectoryRecursively(dir: string, allFiles: { path: string; content: string }[] = [], cumulativeSize: number = 0):
+    Promise<{ path: string; content: string }[]> {
+    try {
+      const entries = await fs.readdir(dir, { withFileTypes: true });
+      await Promise.all(entries.map(async (entry) => {
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          if (this.ignoreManager.shouldExclude(fullPath)) {
+            logger.debug(\`Excluded directory: ${fullPath}\`);
+          }
+          else {
+            await this.readDirectoryRecursively(fullPath, allFiles);
+          }
+        } else {
+          if (!this.ignoreManager.shouldExclude(fullPath)) {
+            const stats = await fs.stat(fullPath); // Get the file stats to access the size
+            cumulativeSize += stats.size; // Add the file size to the cumulative size
+
+            // Check if cumulative size exceeds a certain limit (e.g., 1MB = 1024 * 1024 bytes)
+            if (cumulativeSize > 1024 * 1024) {
+              throw new Error('Total file size exceeds the 1MB limit');
+            }
+
+            const content = await fs.readFile(fullPath, 'utf8');
+            allFiles.push({ path: path.relative(process.cwd(), fullPath), content });
+            logger.debug(\`Included file: ${fullPath}\`);
+          } else {
+            logger.debug(\`Excluded file: ${fullPath}\`);
+          }
+        }
+      }));
+    } catch (error) {
+      logger.error(\`Error reading directory: ${dir}\nError: ${error}\`);
+      throw error; // Rethrow to handle upstream
+    }
+    return allFiles;
+  }
+
+  public async readFileContents(dir: string): Promise<{ path: string; content: string }[]> {
+    logger.debug('Scanning directory for files...');
+    return this.readDirectoryRecursively(dir)
+      .then(files => {
+        logger.debug(\`Scanning complete. Number of files included: ${files.length}\`);
+        return files;
+      })
+      .catch(error => {
+        logger.error(\`Error scanning directory: ${error.message}\n${error.stack}\`);
+        throw error; // Ensure this error is handled upstream if necessary
+      });
+  }
+
+  /*
+  // This function can be utilized in the future to exclude binary files
+  private async isBinaryFile(filePath: string): Promise<boolean> {
+    try {
+      const buffer = Buffer.alloc(512); // Allocate a buffer to read into
+      const fileHandle = await fs.open(filePath, 'r');
+      try {
+        await fileHandle.read(buffer, 0, 512, 0); // Read up to 512 bytes from the beginning of the file
+      } finally {
+        await fileHandle.close();
+      }
+      // Check if there's a null byte in the buffer
+      return buffer.includes(0);
+    } catch (error) {
+      logger.error(\`Error checking if file is binary: ${error.message}\n${error.stack}\`);
+      throw error;
+    }
+  }
+  */
+}
+
+export { FileReader };
+```
+## File: src/util/IgnoreManager.ts
+```
+import fs from 'fs';
+import path from 'path';
+import ignore, {Ignore} from 'ignore';
+import { logger } from './LoggerFactory';
+
+class IgnoreManager {
+  private ignoreFiles: string[];
+  private ig: Ignore;
+
+  constructor({
+      ignoreFiles = [],
+      additionalPatterns = []
+    }: {
+      ignoreFiles?: string[],
+      additionalPatterns?: string[]
+    } = {}) {
+    this.ignoreFiles = ignoreFiles;
+    this.ig = ignore();
+    this.initializeDefaults();
+    this.loadIgnorePatterns();
+    this.addAdditionalPatterns(additionalPatterns);
+  }
+
+  initializeDefaults() {
+    // Explicitly exclude certain files or directories by default
+    this.ig.add([
+      'node_modules/',
+      '.gptignore',
+      '.env',
+      '.git',
+      '.gitignore',
+      '.dockerignore',
+      'package-lock.json',
+    ]);
+  }
+
+  loadIgnorePatterns() {
+    this.ignoreFiles.forEach(fileName => {
+      try {
+        const filePath = path.join(process.cwd(), fileName);
+        if (fs.existsSync(filePath)) {
+          const patterns = fs.readFileSync(filePath, 'utf8');
+          this.ig.add(patterns);
+          logger.debug(\`Loaded ignore patterns from ${fileName}\`);
+        } else {
+          logger.debug(\`${fileName} not found. Skipping.\`);
+        }
+      } catch (error) {
+        logger.error(\`Error reading ${fileName}: ${error}\`);
+      }
+    });
+  }
+  
+  addAdditionalPatterns(patterns: string[]) {
+    patterns.forEach(pattern => {
+      this.ig.add(pattern);
+      logger.debug(\`Added additional ignore pattern: ${pattern}\`);
+    });
+  }
+
+  shouldExclude(fileName: string) {
+    const relativePath = path.relative(process.cwd(), fileName);
+    const isExcluded = this.ig.ignores(relativePath);
+    if (isExcluded) {
+      logger.debug(\`File ${relativePath} is excluded based on ignore patterns.\`);
+    } else {
+      logger.debug(\`File ${relativePath} is included.\`);
+    }
+    return isExcluded;
+  }
+}
+
+export { IgnoreManager };
+```
+## File: src/util/LoggerFactory.ts
+```
+import winston from 'winston';
+import path from 'path';
+
+class LoggerFactory {
+  static serviceName: string;
+  static logger: winston.Logger;
+
+  constructor(serviceName: string = 'GPTLoader') {
+    if (!LoggerFactory.logger || !LoggerFactory.serviceName) {
+      LoggerFactory.serviceName = serviceName;
+      LoggerFactory.logger = this.createLogger();
+    }
+  }
+
+  private createLogger() {
+    const logger = winston.createLogger({
+      level: process.env.LOG_LEVEL,
+      format: winston.format.combine(
+        winston.format.timestamp({
+          format: 'YYYY-MM-DD HH:mm:ss',
+        }),
+        winston.format.errors({ stack: true }),
+        winston.format.splat(),
+        winston.format.json(),
+      ),
+      defaultMeta: { service: LoggerFactory.serviceName },
+      transports: [
+        new winston.transports.File({ filename: path.join(__dirname, '..', 'error.log'), level: 'error' }),
+        new winston.transports.File({ filename: path.join(__dirname, '..', 'combined.log') }),
+      ],
+    });
+
+    logger.add(
+      new winston.transports.Console({
+        format: winston.format.simple(),
+        stderrLevels: ['error'],
+      }),
+    );
+
+    return logger;
+  }
+
+  public getLogger() {
+    if (LoggerFactory.logger) {
+      return LoggerFactory.logger;
+    }
+    else {
+      return this.createLogger();
+    }
+  }
+
+  public static reset() {
+    LoggerFactory.logger = false as unknown as winston.Logger;
+  }
+}
+
+export { LoggerFactory };
+
+export const logger = new LoggerFactory().getLogger();
+```
+## File: src/util/MarkdownGenerator.ts
+```
+import Handlebars from 'handlebars';
+import { logger } from './LoggerFactory';
+
+class MarkdownGenerator {
+  markdownTemplate: string;
+  template: Handlebars.TemplateDelegate<{ files: { path: string; content: string }[] }>;
+
+  constructor() {
+    // Register Handlebars helpers within the constructor
+    this.registerHelpers();
+    // Define the Handlebars template
+    this.markdownTemplate = \`
+# GPTLoader Output
+
+{{#each files}}
+## File: {{path}}
+\\`\\`\\`
+{{escapeBackticks content}}
+\\`\\`\\`
+{{/each}}
+    \`;
+    // Compile the template
+    this.template = Handlebars.compile(this.markdownTemplate);
+  }
+
+  registerHelpers() {
+    // Register a helper to escape backticks
+    Handlebars.registerHelper('escapeBackticks', (text) => 
+      new Handlebars.SafeString(text.replace(/\`/g, '\\\`')));
+  }
+
+  generateMarkdown(fileData: { path: string; content: string }[]) {
+    try {
+      // Use the compiled template with the provided file data
+      const markdownOutput = this.template({ files: fileData });
+      logger.debug('Successfully generated markdown document.');
+      return markdownOutput;
+    } catch (error) {
+      logger.error(\`Error generating markdown document: ${error}\`);
+      throw error; // Rethrowing the error to ensure it can be caught and handled upstream.
+    }
+  }
+}
+
+export { MarkdownGenerator };
+```
+    

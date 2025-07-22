@@ -69,6 +69,12 @@ async function main() {
         type: 'array',
         default: ['.gitignore', '.dockerignore', '.gptignore']
       })
+      .option('output-prompt', {
+        alias: 'op',
+        describe: 'Prompt to use for output',
+        type: 'string',
+        default: 'prompt.md'
+      })
       .help('help')
       .wrap(null)
       .parse();
@@ -91,11 +97,12 @@ async function main() {
       }
       throw error; // If it is a different error, rethrow it
     }
+    
+    // Instantiate MarkdownGenerator
+    const markdownGenerator = new MarkdownGenerator();
 
     // Continuous loop
     while (true) {
-      // Instantiate MarkdownGenerator
-      const markdownGenerator = new MarkdownGenerator();
 
       // Prompt the user for a question
       const response = await prompts({
@@ -125,16 +132,24 @@ async function main() {
       const markdown = markdownGenerator.generateMarkdown(files);
       logger.debug(`Markdown document generated.`);
 
+      // if output prompt is specified, write the prompt to the file
+      if (argv['output-prompt']) {
+        fs.writeFileSync(argv['output-prompt'], markdown);
+        return;
+      }
+
       // Set flag to indicate active GPT request
       isActiveGptRequest = true;
 
-      // Process the question with GPT
-      let stream = await gpt.getChatCompletionStream([
+      let prompt: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
         {role: "system", content: "You are reviewing files and have a question from the user."},
         {role: "system", content: "Here are the files and their contents: \n\n" + markdown},
         ...chatHistory,
         {role: "user", content: response.question}
-      ])
+      ];
+      
+      // Process the question with GPT
+      let stream = await gpt.getChatCompletionStream(prompt)
 
       let gptResponse = await new Promise<OpenAI.Chat.Completions.ChatCompletion.Choice | null>(async (resolve, reject) => {
         // Listen for a cancel event
